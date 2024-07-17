@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400; 
+    min-height: 100vh; 
+
+    background-image: linear-gradient(
+        90deg,
+        #002325,
+        #01233f
+    );
+
+    color: white;
+}
+
+* Estilos para o título da página */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilos para o contêiner dos resultados */
+.resultado-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para os itens de resultado */
+.resultado-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para o título do filme */
+.resultado-item h2 {
+    margin-top: 0;
+}
+
+/* Estilos para a imagem do pôster */
+.resultado-item img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400; 
+    min-height: 100vh; /* Garante que o corpo ocupa pelo menos toda a altura da tela */
+    display: flex; /* Usando flexbox para centralizar */
+    justify-content: center; /* Centralizando horizontalmente */
+    align-items: center; /* Centralizando verticalmente */
+    background-image: linear-gradient(
+        90deg,
+        #002325,
+        #01233f
+    );
+}
+
+.cabecalho {
+    display: grid;
+    justify-content: center;
+    color: white;
+}
+
+h1 {
+    margin-left: 20%; /* Ajuste a margem esquerda conforme necessário */
+    background-image: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: absolute; /* Posicionamento absoluto */
+    top: 36%; /* Alinha o título 30px acima do input */
+    left: 27%; /* Alinha o título com a esquerda do cabeçalho */
+    font-size: 70px;
+}
+
+.item-a {
+    font-size: 17px;
+}
+
+input[type="text"] {
+    padding-top: 5px; /* Adiciona espaço para o título */
+    position: relative; /* Habilita posicionamento relativo */
+}
+
+:root {
+    --gradient: linear-gradient(
+        to right,
+        rgb(149 114 252),
+        rgb(67 231 173),
+        rgb(226 212 92)
+    )
+}
