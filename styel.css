@@ -1,16 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    overflow-x: hidden;
+    margin: 0;
     font-family: "Bebas Neue", sans-serif;
-    font-weight: 400; 
-    min-height: 100vh; /* Garante que o corpo ocupa pelo menos toda a altura da tela */
-    display: flex; /* Usando flexbox para centralizar */
-    justify-content: center; /* Centralizando horizontalmente */
-    align-items: center; /* Centralizando verticalmente */
     background-image: linear-gradient(
         90deg,
         #002325,
@@ -52,4 +43,216 @@ input[type="text"] {
         rgb(67 231 173),
         rgb(226 212 92)
     )
+}
+
+.menu-container {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  position: relative;
+  
+  padding: 20px;
+  
+}
+
+.menu-logo {
+  line-height: 0;
+  margin: 0 20px;
+}
+
+.menu-logo img {
+  max-height: 150px;
+  max-width: 150px;
+  flex-shrink: 0;
+}
+
+.menu-container a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+.menu-container a:hover {
+  color: #0011ff;
+}
+
+/*.menu-container input [type="checkbox"]{
+  display: block;
+  width: 35px;
+  height: 25px;
+  margin: 0;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  /*z-index: 2; /* and place it over the hamburger */
+  /*-webkit-touch-callout: none;
+}*/
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.menu li {
+  padding: 10px 20px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  margin-right: 50px;
+  border: none;
+  outline: none;
+  width: 250px !important;
+  padding: 0px 5px 8px 36px;
+
+  background-color: rgb(0, 0, 0, 0);
+  border-bottom: 1px solid #cdcdcd;
+  color: #fff;
+}
+
+.search-form input[type="submit"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #0011ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-form input[type="submit"]:hover {
+  background-color: #009B89;
+}
+
+/* Burger menu */
+.menu-container span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.menu-container span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.menu-container span:nth-child(3) {
+  transform-origin: 0% 100%;
+}
+
+.menu-container input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(3px,-1px);
+  background: #232323;
+}
+
+.menu-container input:checked ~ span:nth-child(4) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-container input:checked ~ span:nth-child(3) {
+  transform: rotate(-45deg) translate(-5px,11px);
+}
+
+
+/* mobile styles */
+@media only screen and (max-width: 767px) { 
+  .menu-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menu-logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .menu-logo img {
+    max-height: 30px;
+  }
+
+  .menu {
+    position: absolute;
+    box-sizing: border-box;
+    width: 300px;
+    right: -300px;
+    top: 0;
+    margin: -20px;
+    padding: 75px 50px 50px;
+    background: #cdcdcd;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translateX(0%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+  .menu-container input:checked ~ .menu {
+    transform: translateX(-100%);
+  }
+}
+
+/* desktop styles */
+@media only screen and (min-width: 768px) { 
+  .menu-container {
+    width: 100%;
+  }
+
+  .menu-container a {
+    color: #cdcdcd;
+  }
+
+  .menu-container input {
+    display: none;
+  }
+
+  /* Burger menu */
+  .menu-container span {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    /*padding: 20px;*/
+
+    background: black;
+    color: #cdcdcd;
+    
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .menu ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu li {
+    padding: 0 20px;
+  }
 }
